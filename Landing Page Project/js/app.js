@@ -15,30 +15,50 @@
  */
 
 // Global Variables & Selecting Elements //
-
-const navigationList = document.getElementById("navbar__list");
-const navigationBar = document.getElementsByClassName("navbar__menu");
-
-const section1 = document.getElementById("section1");
-const section2 = document.getElementById("section2");
-const section3 = document.getElementById("section3");
-const section4 = document.getElementById("section4");
-const buttons = document.querySelector(".menu__link");
-
-const allSections = [section1, section2, section3, section4];
+const allLinks = document.querySelectorAll("a:link");
+const allSections = document.querySelectorAll("section");
 
 ////////////////////////////////////////////////////////////////////
 
 // Building navigation dynamically //
+function NavBar() {
+  const links = [];
+  const section = document.querySelectorAll("section");
 
-const newLink = document.createElement("div");
-newLink.innerHTML = "";
-const listElement = document.createElement("li");
-listElement.innerHTML = '<a class="menu__link" href="#section4">Section 4</a>';
-navigationList.appendChild(listElement);
+  for (let i = 0; i < section.length; i++) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    const sectionName = section[i].getAttribute("data-nav");
+    const sectionNamePart = sectionName.replace(" ", "").toLowerCase();
+
+    link.setAttribute("href", "#" + sectionNamePart);
+    link.classList.add("menu__link");
+    link.innerText = sectionName;
+    li.appendChild(link);
+    document.getElementById("navbar__list").appendChild(li);
+
+    links.push(link);
+  }
+
+  // Smooth scrolling animation
+  links.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      // getAttribue return string contain the value of attribute ( location )
+      const href = link.getAttribute("href");
+
+      // Scroll to section location
+      if (href !== "#" && href.startsWith("#")) {
+        const secLocation = document.querySelector(href);
+        secLocation.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+}
+
+NavBar();
 
 // Add active class to the viewport section //
-
 window.onscroll = function () {
   allSections.forEach((section) => {
     const box = section.getBoundingClientRect();
@@ -50,7 +70,7 @@ window.onscroll = function () {
 
 ////////////////////////////////////////////////////////////////////
 
-// Another Solution //
+// Another method of adding active class //
 
 /*
 function makeActive() {

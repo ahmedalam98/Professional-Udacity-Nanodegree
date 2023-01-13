@@ -9,10 +9,6 @@
 */
 
 /* ---- Base Rules ---- */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: rgb(136, 203, 171);
   background: linear-gradient(
@@ -36,6 +32,12 @@ h1 {
   h1 {
     font-size: 7em;
     margin: 2em 4rem 1em;
+  }
+}
+
+@media (max-width: 25.875em) {
+  a {
+    font-size: 0.8em;
   }
 }
 
@@ -90,7 +92,8 @@ section {
   color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.navbar__menu .menu__link:hover,
+.navbar__menu .menu__link:focus {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
@@ -238,8 +241,4 @@ section.your-active-class .landing__container::after {
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
-}
-
-.hidden {
-  display: none;
 }
