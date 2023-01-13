@@ -15,6 +15,7 @@
  */
 
 // Global Variables & Selecting Elements //
+
 const allLinks = document.querySelectorAll("a:link");
 const allSections = document.querySelectorAll("section");
 
@@ -39,8 +40,10 @@ function NavBar() {
 
     links.push(link);
   }
+  ////////////////////////////////////////////////////////////////////
 
   // Smooth scrolling animation
+
   links.forEach(function (link) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
@@ -55,10 +58,40 @@ function NavBar() {
     });
   });
 }
+////////////////////////////////////////////////////////////////////
 
-NavBar();
+// Highlight Active Link
 
-// Add active class to the viewport section //
+const highlighter = function () {
+  const sections = document.querySelectorAll("section[id]");
+  window.addEventListener("scroll", navHighlighter);
+
+  function navHighlighter() {
+    // Get current scroll position
+    let scrollY = window.pageYOffset;
+
+    sections.forEach((current) => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 150;
+      const sectionId = current.getAttribute("id");
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document
+          .querySelector("nav a[href*=" + sectionId + "]")
+          .classList.add("active");
+      } else {
+        document
+          .querySelector("nav a[href*=" + sectionId + "]")
+          .classList.remove("active");
+      }
+    });
+  }
+};
+
+////////////////////////////////////////////////////////////////////
+
+// Add active class to the viewport section
+
 window.onscroll = function () {
   allSections.forEach((section) => {
     const box = section.getBoundingClientRect();
@@ -68,22 +101,6 @@ window.onscroll = function () {
   });
 };
 
-////////////////////////////////////////////////////////////////////
-
-// Another method of adding active class //
-
-/*
-function makeActive() {
-  for (const section of allSections) {
-    const box = section.getBoundingClientRect();
-    if (box.top <= 150 && box.bottom >= -450) {
-      section.classList.add("your-active-class");
-    } else {
-      section.classList.remove("your-active-class");
-    }
-  }
-}
-document.addEventListener("scroll", function () {
-  makeActive();
-});
-*/
+// Calling functions
+NavBar();
+highlighter();

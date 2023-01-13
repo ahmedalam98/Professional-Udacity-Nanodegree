@@ -14,6 +14,7 @@ This project requires to build a multi-section landing page, with a dynamically 
 2- The navigation menu contains links to the correspondent sections of the landing page.
 3- A click on a section link triggers smooth scroll animation using .scrollIntoView event.
 4- Add active class to the viewport section.
+5- Highlight the active navigation link.
 
 #### Versions
 
