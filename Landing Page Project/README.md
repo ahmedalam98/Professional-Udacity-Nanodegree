@@ -1,23 +1,28 @@
 # Landing Page Project
 
-## Table of Contents
+## Project Title
 
-Project Title : Landing Page Project
+Landing Page Project
 
-Demo-Preview : This project requires to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
+## Demo-Preview
 
-Development:
+This project requires to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
 
 1. Selecting Elements
-2. Building navigation element dynamically
-3. Add active class to the viewport section
 
-License : ./LICENSE.txt
+2. Add active class to the viewport section
 
-## Instructions
+### Development
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+1- Navigation menu is dynamically build. Two more sections was added to check if the navigation menu works.
+2- The navigation menu contains links to the correspondent sections of the landing page.
+3- A click on a section link triggers smooth scroll animation using .scrollIntoView event.
+4- Add active class to the viewport section.
 
-To get started, open `js/app.js` and start building out the app's functionality
+#### Versions
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+Original template is provided by Udacity.
+
+##### License
+
+LICENSE.txt
