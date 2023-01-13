@@ -8,10 +8,6 @@ Landing Page Project
 
 This project requires to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
 
-1. Selecting Elements
-
-2. Add active class to the viewport section
-
 ### Development
 
 1- Navigation menu is dynamically build. Two more sections was added to check if the navigation menu works.
