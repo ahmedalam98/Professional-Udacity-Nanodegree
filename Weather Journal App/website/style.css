@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* ( 1 rem = 10 Pixels ) */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-image: linear-gradient(
+      rgba(35, 35, 35, 0.598),
+      rgba(35, 35, 35, 0.598)
+    ),
+    url(weather.jpg);
+  background-size: cover;
+  color: rgb(235, 235, 235);
+}
+
+header {
+  text-align: center;
+  font-size: 9rem;
+  font-weight: bold;
+  margin-top: 10rem;
+}
+
+label {
+  display: block;
+  font-size: 2.8rem;
+}
+
+input,
+textarea {
+  margin-top: 0.8rem;
+  display: block;
+  height: 60px;
+  width: 18rem;
+  background: rgba(59, 74, 107, 0.4);
+  color: #f0d43a;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  border: none;
+}
+
+button {
+  width: 25%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition-duration: all 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #fff7ec;
+}
+
+button:hover {
+  background-image: linear-gradient(30deg, #fff7ec, #feebcf, #fddcaf, #fdca94);
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#app {
+  display: grid;
+  height: 40rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 8rem;
+  padding-left: 42rem;
+  padding-right: 24rem;
+  /*grid-auto-columns: minmax(150px, auto);*/
+  /* grid-template-columns:  */
+  color: rgb(235, 235, 235);
+  justify-content: center;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.entry {
+  background: rgba(59, 74, 107, 0.4);
+  height: 40rem;
+  /*
+  opacity: 0;
+  */
+}
+
+.title {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+}
+
+#feelings {
+  background: rgba(59, 74, 107, 0.4);
+  color: #f0d43a;
+  font-size: 20px;
+  height: 8rem;
+  width: 75%;
+}
+
+/*
+#date {
+}
+
+#temp {
+}
+
+#content {
+}
+*/
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: #f0d43a;
+  font-family: "Oswald", sans-serif;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #f0d43a;
+  font-family: "Oswald", sans-serif;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #f0d43a;
+  font-family: "Oswald", sans-serif;
+}
