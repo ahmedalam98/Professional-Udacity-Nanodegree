@@ -22,6 +22,7 @@ Cors - Express middleware: for cross origin allowance
 #### Versions
 
 Original template is provided by Udacity.
+Style template modification by me.
 
 ##### License
 
