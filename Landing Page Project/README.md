@@ -1,25 +1,37 @@
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 # Landing Page Project
 
-## Project Title
+## Table of Contents
 
-Landing Page Project
+- [Description](#description)
+- [Features](#Features)
+- [Instructions](#instructions)
 
-## Demo-Preview
+## Description
 
-This project requires to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
+This project takes an HTML file with an unknown number of text sections and dynamically makes a navigation bar at the top using JavaScript.
 
-### Development
+It also tracks where the user is scrolling on the page, and highlights the active text section and the active navigation button.
 
-1- Navigation menu is dynamically build. Two more sections was added to check if the navigation menu works.
-2- The navigation menu contains links to the correspondent sections of the landing page.
-3- A click on a section link triggers smooth scroll animation using .scrollIntoView event.
-4- Add active class to the viewport section.
-5- Highlight the active navigation link.
+The project is made for [_Udacity_](https://www.udacity.com/)'s
 
-#### Versions
+![Landing preview](./assets/preview.png)
 
-Original template is provided by Udacity.
+## Features
 
-##### License
+1.  Building navigation dynamically
+2.  Highlight active link
+3.  Smooth scrolling
+4.  Add active class to the viewport section
 
-LICENSE.txt
+## Instructions
+
+The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+
+To get started, open `js/app.js` and start building out the app's functionality
+
+For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+Starter code taken from udacity [repository](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page).
