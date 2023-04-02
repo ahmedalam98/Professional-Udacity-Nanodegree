@@ -25,7 +25,13 @@ btn.addEventListener("click", performAction);
 function performAction(e) {
   zipCode = document.getElementById("zip").value;
   userFeeling = document.getElementById("feelings").value;
+  /*
+  // Debugging 
   console.log(zipCode);
+  */
+  if (zipCode === "") {
+    alert("Please enter valid zip code");
+  }
   getWeather(zipCode).then((data) => {
     // Structuring the recieved data
     const { temp } = data.main;
@@ -44,10 +50,13 @@ const getWeather = async (zipCode) => {
   try {
     const data = await res.json();
     console.log(data);
+    if (data.cod === "404") {
+      alert(data.message);
+    }
     return data;
   } catch (error) {
     // Error Handling
-    console.error(error);
+    alert(error);
   }
 };
 
